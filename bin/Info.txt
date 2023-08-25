@@ -17,7 +17,7 @@ Types of data Structures :
 		
 		
 Arrays :
-Array is data type of ds which store same type of datab in continuous order.
+Array is data type of ds which store same type of data in continuous order.
  
 Types of arrays :
  1. 1D Arrays ->
@@ -25,6 +25,7 @@ Types of arrays :
  Insertion 
  Deletion
  Searching -> Binary search , Linear Search
+ sorting -> Merge sort, quick sort , bubble sort, count sort,selection sort
  
  2. Multidimensional Arrays
  operations on Multidimensional Arrays :
