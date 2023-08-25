@@ -30,11 +30,11 @@ public class SerachingAlgorithums {
 	 * @return index if element is present else return 0.
 	 */
 	public static int binarySerach(int arr[], int search) {
-		int firstIndex = 0, lastIndex = arr.length - 1;
-		int midIndex = (firstIndex + lastIndex) / 2;
+		int firstIndex = 0, lastIndex = arr.length - 1, midIndex;		
 		// Loop executes till first index exceeds last index
 		while (firstIndex <= lastIndex) {
-
+			// setting mid index
+			midIndex = (firstIndex + lastIndex) / 2;
 			// if element found at middle then return mid index
 			if (arr[midIndex] == search) {
 				return midIndex;
@@ -48,8 +48,7 @@ public class SerachingAlgorithums {
 			else {
 				lastIndex = midIndex - 1;
 			}
-			// chnge mid index to updated values.
-			midIndex = (firstIndex + lastIndex) / 2;
+
 		}
 		return 0;
 	}
