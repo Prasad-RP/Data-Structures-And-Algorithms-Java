@@ -15,20 +15,4 @@ Types of data Structures :
 		Trees
 		Graphs 
 		
-		
-Arrays :
-Array is data type of ds which store same type of data in continuous order.
- 
-Types of arrays :
- 1. 1D Arrays ->
- operations on 1D Arrays :
- Insertion 
- Deletion
- Searching -> Binary search , Linear Search
- sorting -> Merge sort, quick sort , bubble sort, count sort,selection sort
- 
- 2. Multidimensional Arrays
- operations on Multidimensional Arrays :
- These arrays are simple matrix format arrays.
- We can perform addtion , multiplication , substraction on 2d arrays.
  
