@@ -1,7 +1,11 @@
 package linear_data_structures.arrays;
 
 import java.util.Scanner;
-
+/**
+ * 
+ * @author Prasad Pansare
+ *
+ */
 public class QuickSortAlgorithm {
 
 	/**
