@@ -6,7 +6,7 @@ package linear_data_structures.arrays;
  * @category This file contains implementations searching algorithums of array.
  *
  */
-public class SerachingAlgorithums {
+public class SerachingAlgorithms {
 
 	/**
 	 * Method for linear search / also called as brute force search.
