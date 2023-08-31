@@ -8,7 +8,7 @@ Types of arrays :
  Insertion 
  Deletion
  Searching -> Binary search , Linear Search
- sorting -> Merge sort, quick sort , bubble sort, count sort,selection sort,Insertion sort
+ sorting ->bubble sort,count sort, Insertion sort, Merge sort, quick sort , selection sort
  
  2. Multidimensional Arrays
  operations on Multidimensional Arrays :
