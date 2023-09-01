@@ -1,0 +1,23 @@
+Linked List : 
+	A linked list is a linear data structure that includes a series of connected nodes.
+	Here, each node stores the data and the address of the next node.
+	
+	You have to start somewhere, so we give the address of the first node a special name 
+	called HEAD. Also, the last node in the linked list can be identified because its next
+	portion points to NULL.
+	
+	Representation of Linked List :
+	Each node consists:
+	 1. A data item
+	 2. An address of another node
+	
+	Linked List Applications
+	
+Types of LL :
+
+Singly LL
+Doubly LL
+Circular LL-->
+	Circular LL also has two types :
+	 1. Singly Circular LL
+	 2. Doubly Circular LL

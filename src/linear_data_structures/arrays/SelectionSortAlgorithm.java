@@ -80,7 +80,7 @@ public class SelectionSortAlgorithm {
 
 		System.out.println("Array elements before sort...");
 		printArray(a);
-		// calling quick sort
+		// calling selectionSort sort
 		selectionSort(a);
 		System.out.println("Array elements after sort...");
 		printArray(a);

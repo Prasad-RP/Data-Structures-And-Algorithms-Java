@@ -15,18 +15,3 @@ Types of arrays :
  These arrays are simple matrix format arrays.
  We can perform addtion , multiplication , substraction on 2d arrays.
 
- 
- Array Operations :
-  1. Searching ->
-  
- Binary Search: 
-	Binary Search is a searching algorithm used in a sorted array by repeatedly dividing 
-	the search interval in half and the correct interval to find is decided based on the 
-	searched value and the mid value of the interval.
-	 
-	Pre-requisites to apply Binary Search Algorithm:
-	For applying binary search in any data structure, the data structure must 
-	satisfy the following two conditions:
-		The data structure is sorted.
-		Any random element of the data structure can be directly accessed 
-		i.e., can be accessed in constant time.
