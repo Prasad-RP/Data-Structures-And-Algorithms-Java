@@ -89,9 +89,9 @@ public class SinglyLinkedList {
 	}
 
 	public static void main(String[] args) {
-		LinkedList list = new LinkedList();
+		SinglyLinkedList list = new SinglyLinkedList();
 		list.createSinglyLinkedList();
-		
+
 		list.insertAtBegining();
 		list.traverse();
 	}
