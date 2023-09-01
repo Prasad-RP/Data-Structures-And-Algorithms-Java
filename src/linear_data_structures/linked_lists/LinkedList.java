@@ -70,15 +70,10 @@ public class LinkedList {
 			}
 		}
 	}
-
+	
 	public static void main(String[] args) {
 		LinkedList list = new LinkedList();
 		list.createSinglyLinkedList();
 		list.traverse();
-	}
-
-	public void insertAtBegining() {
-		// TODO Auto-generated method stub
-		
 	}
 }
