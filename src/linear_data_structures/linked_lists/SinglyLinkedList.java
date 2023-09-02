@@ -36,7 +36,6 @@ public class SinglyLinkedList {
 	public void createSinglyLinkedList() {
 		int n;
 		int data;
-		Scanner sc = new Scanner(System.in);
 		do {
 			System.out.println("Enter element to create Linked list: ");
 			data = sc.nextInt();
@@ -92,6 +91,8 @@ public class SinglyLinkedList {
 			beginingNode.next = head;
 			head = beginingNode;
 		}
+		System.out.println("\nLinked List After insertion at Begining...\n");
+		traverse();
 	}
 
 	/**
@@ -109,6 +110,8 @@ public class SinglyLinkedList {
 		// finally we reach at last node
 		// then we simply assign new node value to last node
 		ptr.next = endingNode;
+		System.out.println("\nLinked List After insertion at End...\n");
+		traverse();
 	}
 
 	/**
@@ -121,16 +124,31 @@ public class SinglyLinkedList {
 		Node ptr = head;
 		Node middleNode = new Node(data);
 		int currentIndex = 0;
-		while (ptr != null && currentIndex < positionToInsert - 2) {
-			ptr = ptr.next;
-			currentIndex++;
+		// if we want to insert at index 0 i.e position 1
+		if (positionToInsert == 0 || positionToInsert == 1) {
+			insertAtBegining(data);
+		} else {
+			while (ptr != null && currentIndex < positionToInsert - 2) {
+				ptr = ptr.next;
+				currentIndex++;
+			}
+			middleNode.next = ptr.next;
+			ptr.next = middleNode;
 		}
-		middleNode.next = ptr.next;
-		ptr.next = middleNode;
+		System.out.println("\nLinked List After insertion at position: " + positionToInsert + "\n");
+		traverse();
+	}
+
+	public void deleteAtBegining() {
+		if (head == null) {
+			System.out.println("Empty Linked List..");
+		} else {
+			head = head.next;
+		}
 	}
 
 	// Menu for all operations
-	public void callMenu() {
+	public void showMenu() {
 		int ch;
 		System.out.println("Linked list.... ");
 		do {
@@ -173,6 +191,6 @@ public class SinglyLinkedList {
 	public static void main(String[] args) {
 
 		SinglyLinkedList list = new SinglyLinkedList();
-		list.callMenu();
+		list.showMenu();
 	}
 }
