@@ -85,12 +85,11 @@ public class SinglyLinkedList {
 		Node beginingNode = new Node(data);
 		/*
 		 * first we assign value of new node's next to head and then then we assign
-		 * value of head to new node This will only happen if head is not null
+		 * value of head to new node.
 		 */
-		if (head != null) {
-			beginingNode.next = head;
-			head = beginingNode;
-		}
+		beginingNode.next = head;
+		head = beginingNode;
+
 		System.out.println("\nLinked List After insertion at Begining...\n");
 		displayLinkedList();
 	}
@@ -194,7 +193,7 @@ public class SinglyLinkedList {
 	// Menu for all operations
 	public void showMenu() {
 		int ch;
-		System.out.println("Linked list.... ");
+		System.out.println("Singly Linked list.... ");
 		do {
 			System.out.println(
 					"\n0.create A linked list \n1.insert At begining \n2.Insert at Position \n3.Insert At end\n4.Delete At Begining\n5.Delete At position\n6.Delete at End\n7.Display list \n8.Exit");

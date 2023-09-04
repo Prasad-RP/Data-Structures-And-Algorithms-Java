@@ -32,7 +32,7 @@ public class CircularLinkedList {
 	/**
 	 * function for a creating Singly Linked list.
 	 */
-	public void createSinglyLinkedList() {
+	public void createSinglyCircularLinkedList() {
 		int n;
 		int data;
 		do {
@@ -82,7 +82,7 @@ public class CircularLinkedList {
 
 	public static void main(String[] args) {
 		CircularLinkedList list = new CircularLinkedList();
-		list.createSinglyLinkedList();
+		list.createSinglyCircularLinkedList();
 		list.displayLinkedList();
 	}
 }

@@ -3,7 +3,8 @@ package linear_data_structures.linked_lists;
 import java.util.Scanner;
 
 /**
- * This file contains methods to create and traverse a singly linked list.
+ * This file contains methods to creation , insertion , deletion and traverse a
+ * singly circular linked list.
  * 
  * @author Prasad Pansare
  *
@@ -70,7 +71,7 @@ public class LinkedList {
 			}
 		}
 	}
-	
+
 	public static void main(String[] args) {
 		LinkedList list = new LinkedList();
 		list.createSinglyLinkedList();
