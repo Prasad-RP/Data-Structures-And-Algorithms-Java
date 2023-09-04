@@ -128,8 +128,9 @@ public class SinglyLinkedList {
 			middleNode = middleNode.next;
 			currentIndex++;
 		}
-
+		// new node is point to current middle node
 		newNode.next = middleNode.next;
+		// middle node will be now new node
 		middleNode.next = newNode;
 
 		System.out.println("\nLinked List After insertion at position: " + positionToInsert + "\n");

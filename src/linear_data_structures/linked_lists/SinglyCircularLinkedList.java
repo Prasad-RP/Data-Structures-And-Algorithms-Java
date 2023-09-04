@@ -90,6 +90,11 @@ public class SinglyCircularLinkedList {
 
 	public void insertAtEnd(int data) {
 		Node newNode = new Node(data);
+		/*
+		 * we have tail node which is points to last node so to insert last node we need
+		 * to set, tail's next to node , new node's next to head and tail to new node
+		 * since it is pointing to last
+		 */
 		tail.next = newNode;
 		newNode.next = head;
 		tail = newNode;
@@ -97,16 +102,22 @@ public class SinglyCircularLinkedList {
 		displayLinkedList();
 	}
 
-	public void insertAtGivenPosition(int data, int positionaToInsert) {
+	public void insertAtGivenPosition(int positionToInsert, int data) {
+		Node middleNode = head;
 		Node newNode = new Node(data);
 		int currentIndex = 0;
-		Node middleNode = head;
-		while (middleNode != null && currentIndex > positionaToInsert - 2) {
+		// loop to reach upto the node where new node is going to be inserted
+		while (middleNode != null && currentIndex < positionToInsert - 2) {
 			middleNode = middleNode.next;
+			currentIndex++;
 		}
-
+		// new node is point to current middle node
 		newNode.next = middleNode.next;
+		// middle node will be now new node
 		middleNode.next = newNode;
+
+		System.out.println("\nLinked List After insertion at position: " + positionToInsert + "\n");
+		displayLinkedList();
 	}
 
 	public void deleteAtBegining() {
