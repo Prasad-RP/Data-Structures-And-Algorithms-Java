@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * 
  * @author Prasad Pansare
- *  This file conatins methods for insertion, deletion in array.
+ *  This file contains methods for insertion, deletion in array.
  *         
  */
 public class ArrayExample1D {

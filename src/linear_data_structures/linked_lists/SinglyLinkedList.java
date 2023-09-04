@@ -3,7 +3,7 @@ package linear_data_structures.linked_lists;
 import java.util.Scanner;
 
 /**
- * This file contins methods to create, traverse , insertion and deletion in a
+ * This file contains methods to create, traverse , insertion and deletion in a
  * singly linked list.
  * 
  * @author Prasad Pansare

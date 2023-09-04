@@ -3,17 +3,18 @@ package linear_data_structures.linked_lists;
 import java.util.Scanner;
 
 /**
- * This file contains methods to create and traverse a singly linked list.
  * 
  * @author Prasad Pansare
  *
  */
-public class LinkedList {
+public class CircularLinkedList {
+	// global resourse for accepting user input
+	Scanner sc = new Scanner(System.in);
 
 	/**
 	 * Class node for Linked list.
 	 */
-	static class Node {
+	class Node {
 		int data;
 		Node next;
 
@@ -23,31 +24,38 @@ public class LinkedList {
 		}
 	}
 
-	// Setting head to null , since no element is present in list.
+	// point to first element
 	Node head = null;
+	// point to last element
+	Node tail = null;
 
 	/**
 	 * function for a creating Singly Linked list.
 	 */
 	public void createSinglyLinkedList() {
-		int n, data;
-		Scanner sc = new Scanner(System.in);
+		int n;
+		int data;
 		do {
 			System.out.println("Enter element to create Linked list: ");
 			data = sc.nextInt();
 			Node newNode = new Node(data);
 			// if linked list does not exist, then we assign value of head to new node
+			// and also tail is equal to new node due to only one node and circular list
 			if (head == null) {
 				head = newNode;
+				tail = newNode;
+				newNode.next = head;
 			}
 			/*
 			 * if linked list exist , then first we assign value of new node's next to head
-			 * and then then we assign value of head to new node (Basically its insertion in
-			 * the begining)
+			 * and then then we assign value of head to new node and we have last node
+			 * called tail , so assign tail's next to head . since it is a circular list
+			 * (Basically its insertion in the begining)
 			 */
 			else {
 				newNode.next = head;
 				head = newNode;
+				tail.next = head;
 			}
 			// For adding extra elements (depends on user.)
 			System.out.println("Do you wants to add more data, If yes Enter 1.");
@@ -56,24 +64,25 @@ public class LinkedList {
 	}
 
 	/**
-	 * function for traversing Linked list.
+	 * function for traversing the whole Linked list.
 	 */
-	public void traverse() {
+	public void displayLinkedList() {
 		Node ptr = head;
 		if (head == null) {
 			System.out.println("LL does not exist...");
 		} else {
-			System.out.println("Elements of Linked List...");
-			while (ptr != null) {
+			System.out.println("\nElements of Linked List...");
+			do {
 				System.out.print(ptr.data + " ");
 				ptr = ptr.next;
-			}
+			} while (ptr != head);
+			System.out.println();
 		}
 	}
-	
+
 	public static void main(String[] args) {
-		LinkedList list = new LinkedList();
+		CircularLinkedList list = new CircularLinkedList();
 		list.createSinglyLinkedList();
-		list.traverse();
+		list.displayLinkedList();
 	}
 }
