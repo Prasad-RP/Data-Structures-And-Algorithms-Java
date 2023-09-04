@@ -62,7 +62,7 @@ public class SinglyLinkedList {
 	/**
 	 * function for traversing the whole Linked list.
 	 */
-	public void traverse() {
+	public void displayLinkedList() {
 		Node ptr = head;
 		if (head == null) {
 			System.out.println("LL does not exist...");
@@ -92,7 +92,7 @@ public class SinglyLinkedList {
 			head = beginingNode;
 		}
 		System.out.println("\nLinked List After insertion at Begining...\n");
-		traverse();
+		displayLinkedList();
 	}
 
 	/**
@@ -101,17 +101,17 @@ public class SinglyLinkedList {
 	 * @param data
 	 */
 	public void insertAtEnd(int data) {
-		Node endingNode = new Node(data);
-		Node ptr = head;
+		Node newNode = new Node(data);
+		Node endingNode = head;
 		// traversing till last node
-		while (ptr.next != null) {
-			ptr = ptr.next;
+		while (endingNode.next != null) {
+			endingNode = endingNode.next;
 		}
 		// finally we reach at last node
 		// then we simply assign new node value to last node
-		ptr.next = endingNode;
+		endingNode.next = newNode;
 		System.out.println("\nLinked List After insertion at End...\n");
-		traverse();
+		displayLinkedList();
 	}
 
 	/**
@@ -121,30 +121,74 @@ public class SinglyLinkedList {
 	 * @param data
 	 */
 	public void insertAtGivenPosition(int positionToInsert, int data) {
-		Node ptr = head;
-		Node middleNode = new Node(data);
+		Node middleNode = head;
+		Node newNode = new Node(data);
 		int currentIndex = 0;
-		// if we want to insert at index 0 i.e position 1
-		if (positionToInsert == 0 || positionToInsert == 1) {
-			insertAtBegining(data);
-		} else {
-			while (ptr != null && currentIndex < positionToInsert - 2) {
-				ptr = ptr.next;
-				currentIndex++;
-			}
-			middleNode.next = ptr.next;
-			ptr.next = middleNode;
+		// loop to reach upto the node where new node is going to be inserted
+		while (middleNode != null && currentIndex < positionToInsert - 2) {
+			middleNode = middleNode.next;
+			currentIndex++;
 		}
+
+		newNode.next = middleNode.next;
+		middleNode.next = newNode;
+
 		System.out.println("\nLinked List After insertion at position: " + positionToInsert + "\n");
-		traverse();
+		displayLinkedList();
 	}
 
+	// method to delete element at begining
 	public void deleteAtBegining() {
 		if (head == null) {
 			System.out.println("Empty Linked List..");
 		} else {
+			// removing first node
 			head = head.next;
 		}
+		System.out.println("Linked list after deleting first element...");
+		displayLinkedList();
+	}
+
+	// method to delete element at end
+	public void deleteAtEnd() {
+		if (head == null) {
+			System.out.println("Empty Linked List..");
+		} else {
+			// pointer to move upto second last node
+			Node previousOfEndingNode = head;
+			// pointer to move upto last node
+			Node endingNode = previousOfEndingNode.next;
+
+			while (endingNode.next != null) {
+				previousOfEndingNode = endingNode;
+				endingNode = endingNode.next;
+			}
+			// removing last node
+			previousOfEndingNode.next = null;
+		}
+		System.out.println("Linked list after deleting last element...");
+		displayLinkedList();
+	}
+
+	// method to delete element at given position
+	public void deleteAtGivenPosition(int positionToInsert) {
+		// pointer to move upto the previous of the node which is going to be deleted.
+		Node previousOfMiddleNode = head;
+		// pointer to move upto node which is going to be deleted.
+		Node middleNode = previousOfMiddleNode.next;
+
+		int currentIndex = 0;
+		// loop to reach upto the node which is going to be deleted
+		while (middleNode != null && currentIndex < positionToInsert - 2) {
+			previousOfMiddleNode = middleNode;
+			middleNode = middleNode.next;
+			currentIndex++;
+		}
+		// setting address of deleted's next node to prev node
+		previousOfMiddleNode.next = middleNode.next;
+
+		System.out.println("\nLinked List After deleting element at position: " + positionToInsert + "\n");
+		displayLinkedList();
 	}
 
 	// Menu for all operations
@@ -153,7 +197,7 @@ public class SinglyLinkedList {
 		System.out.println("Linked list.... ");
 		do {
 			System.out.println(
-					"\n0.create A linked list \n1.insert At begining \n2.Insert at Position \n3.Insert At end \n4.Display list \n5.Exit");
+					"\n0.create A linked list \n1.insert At begining \n2.Insert at Position \n3.Insert At end\n4.Delete At Begining\n5.Delete At position\n6.Delete at End\n7.Display list \n8.Exit");
 			System.out.println("Enter Your choice : ");
 			ch = sc.nextInt();
 			switch (ch) {
@@ -166,7 +210,6 @@ public class SinglyLinkedList {
 				insertAtBegining(element);
 				break;
 			case 2:
-
 				System.out.print("Enter position to insert: ");
 				int positionToInsert = sc.nextInt();
 				System.out.print("Enter element to insert at given position: ");
@@ -177,15 +220,25 @@ public class SinglyLinkedList {
 				insertAtEnd(sc.nextInt());
 				break;
 			case 4:
-				traverse();
+				deleteAtBegining();
 				break;
 			case 5:
+				System.out.print("Enter position to Delete: ");
+				deleteAtGivenPosition(sc.nextInt());
+				break;
+			case 6:
+				deleteAtEnd();
+				break;
+			case 7:
+				displayLinkedList();
+				break;
+			case 8:
 				System.exit(0);
 
 			default:
 				break;
 			}
-		} while (ch != 5);
+		} while (ch != 8);
 	}
 
 	public static void main(String[] args) {
