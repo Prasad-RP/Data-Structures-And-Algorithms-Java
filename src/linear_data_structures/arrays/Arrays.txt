@@ -15,3 +15,11 @@ Types of arrays :
  These arrays are simple matrix format arrays.
  We can perform addtion , multiplication , substraction on 2d arrays.
 
+Applications of Arrays
+	Storing collections of data: 
+		Arrays are often used to store collections of data of the same type.
+	Implementing matrices and tables:
+		 Arrays can be used to implement matrices and tables.
+	Sorting and searching: 
+		Arrays are often used for sorting and searching data.
+		 

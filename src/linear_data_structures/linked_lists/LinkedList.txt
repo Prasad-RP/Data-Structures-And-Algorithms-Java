@@ -27,3 +27,9 @@ Circular LL-->
 	 
 	 Note : In Doubly Linked list and Doubly Circular Linked list Insertion and Deletion
 	 at given position will be same.
+
+Applications of LL :
+	Stacks and queues
+	Linked allocation of files
+	Graphs and Trees
+	Memory management

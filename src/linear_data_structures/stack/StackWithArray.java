@@ -94,7 +94,6 @@ public class StackWithArray {
 				break;
 			case 4:
 				System.out.println("Element at top : " + stack.peek());
-				;
 				break;
 			case 5:
 				System.exit(0);

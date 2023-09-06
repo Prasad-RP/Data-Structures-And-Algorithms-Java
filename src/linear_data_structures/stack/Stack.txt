@@ -1,0 +1,27 @@
+Stack: 
+	Stack is a linear data structure that follows a particular order in which
+	the operations are performed. The order may be LIFO(Last In First Out)
+	or FILO(First In Last Out). LIFO implies that the element that is 
+	inserted last, comes out first and FILO implies that the element 
+	that is inserted first, comes out last.
+	
+	Implementaton of stack :
+		Stack can be implemented by Arrays and Linked List.
+		Top is a pointer that is used to maintain stack in both type of 
+		implementations. In case of array Top is an index and with linked 
+		list top is pointer pointing to Top element.
+		Singly LL is used to implement a stack.
+	
+	Top is pointer that is  used in push and pop opertions.
+	When stack gets full , condition is called Stack Overflow.
+	When stack gets empty , condition is called Stack Underflow.
+	 
+Applications of Stack :
+	In Undo - Redo operations
+	Function Calls- 
+		The state of the program is placed into the Stack when a functionis invoked. 
+	Backtracking
+	Web browser history
+	Reverse the Data
+	Parenthesis checking
+	Expression Evaluation(Infix , PostFix)
