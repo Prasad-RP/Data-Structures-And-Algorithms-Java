@@ -21,3 +21,9 @@ Circular LL-->
 	Circular LL also has two types :
 	 1. Singly Circular LL
 	 2. Doubly Circular LL
+	 
+	 Note : In Singly Linked list and Singly Circular Linked list Insertion and Deletion
+	 at given position will be same.
+	 
+	 Note : In Doubly Linked list and Doubly Circular Linked list Insertion and Deletion
+	 at given position will be same.

@@ -3,13 +3,13 @@ package linear_data_structures.linked_lists;
 import java.util.Scanner;
 
 /**
- * This file contains methods to create , traverse , Insert and Delete in a
- * Doubly linked list.
+ * This file contains methods to create traverse in a Doubly Circular linked
+ * list.
  * 
  * @author Prasad Pansare
  *
  */
-public class DoublyLinkedListOperations {
+public class DoublyCircularLinkedListOperations {
 	// global resourse for accepting user input
 	Scanner sc = new Scanner(System.in);
 
@@ -22,32 +22,35 @@ public class DoublyLinkedListOperations {
 			this.data = data;
 			this.next = null;
 			this.prev = null;
-
 		}
 	}
 
 	Node head = null;
 	Node tail = null;
 
-	public void createDoublyLinkedList() {
+	public void createDoublyCircularLinkedList() {
 		int n;
 		int data;
 		do {
-			System.out.println("Enter element to create Linked list: ");
+			System.out.println("Enter element to create Doubly Circular Linked list: ");
 			data = sc.nextInt();
 			Node newNode = new Node(data);
 
 			if (head == null) {
 				head = newNode;
 				tail = newNode;
+				newNode.prev = newNode;
+				newNode.next = newNode;
 			} else {
 				/*
-				 * Its basically insertion in begining , first set prev of head to new node then
-				 * new node's next now 1st node i.e head so set it. and now modify head to new
-				 * node.
+				 * It's similar to insertion in begining , first set new node's prev to tail and
+				 * next to head. Then tail's next to newNode and head's prev to newNode and
+				 * modify head to new node.
 				 */
-				head.prev = newNode;
 				newNode.next = head;
+				newNode.prev = tail;
+				tail.next = newNode;
+				head.prev = newNode;
 				head = newNode;
 			}
 			// For adding extra elements (depends on user.)
@@ -56,29 +59,27 @@ public class DoublyLinkedListOperations {
 		} while (n == 1);
 	}
 
-	// to traverse the list
 	public void displayLinkedList() {
 		Node ptr = head;
 		if (head == null) {
 			System.out.println("LL does not exist...");
 		} else {
-			System.out.println("Elements of Linked List...");
-			while (ptr != null) {
+			System.out.println("\nElements of Linked List...");
+			do {
 				System.out.print(ptr.data + " ");
 				ptr = ptr.next;
-			}
+			} while (ptr != head);
+			System.out.println();
 		}
 	}
 
-	public void insertAtBegining(int data) {
+	private void insertAtBegining(int data) {
 		Node newNode = new Node(data);
 
-		/*
-		 * first set prev of head to new node then new node's next now 1st node i.e head
-		 * so set it. and now modify head to new node.
-		 */
-		head.prev = newNode;
 		newNode.next = head;
+		newNode.prev = tail;
+		tail.next = newNode;
+		head.prev = newNode;
 		head = newNode;
 
 		// to display the change
@@ -86,14 +87,13 @@ public class DoublyLinkedListOperations {
 		displayLinkedList();
 	}
 
-	public void insertAtEnd(int data) {
+	private void insertAtEnd(int data) {
 		Node newNode = new Node(data);
-		/*
-		 * since we already have last element i.e tail so, setting last element's next
-		 * to new node's , and new node's prev to tail and updating tail to new node.
-		 */
-		tail.next = newNode;
+
+		newNode.next = head;
 		newNode.prev = tail;
+		head.prev = newNode;
+		tail.next = newNode;
 		tail = newNode;
 
 		// to display the change
@@ -101,7 +101,7 @@ public class DoublyLinkedListOperations {
 		displayLinkedList();
 	}
 
-	public void insertAtGivenPosition(int positionToInsert, int data) {
+	private void insertAtGivenPosition(int positionToInsert, int data) {
 		Node newNode = new Node(data);
 		Node previousOfMiddleNode = head;
 		Node middleNode = previousOfMiddleNode.next;
@@ -124,26 +124,31 @@ public class DoublyLinkedListOperations {
 
 		System.out.println("\nLinked List After insertion at position: " + positionToInsert + "\n");
 		displayLinkedList();
+
 	}
 
-	public void deleteAtBegining() {
-		if (head == null) {
-			System.out.println("Empty Linked List..");
-		} else {
-			// taking a ptr to point at head
-			Node ptr = head;
-			// updating head to its next
-			head = head.next;
-			// breaking link from previous to updated head
-			head.prev = null;
-			// breaking link from ptr
-			ptr.next = null;
-		}
+	private void deleteAtBegining() {
+		// setting head to its next
+		head = head.next;
+		// making link between head's prev and tail
+		head.prev = tail;
+		// making link between tail's next and head
+		tail.next = head;
+
 		System.out.println("Linked list after deleting first element...");
 		displayLinkedList();
 	}
 
-	public void deleteAtGivenPosition(int positionToDelete) {
+	private void deleteAtEnd() {
+		// setting tail to its prev
+		tail = tail.prev;
+		// making link between tail's next and head
+		tail.next = head;
+		// making link between head's prev and tail
+		head.prev = tail;
+	}
+
+	private void deleteAtGivenPosition(int positionToDelete) {
 		Node previousOfMiddleNode = head;
 		Node middleNode = previousOfMiddleNode.next;
 		int currentIndex = 1;
@@ -158,23 +163,7 @@ public class DoublyLinkedListOperations {
 
 		System.out.println("\nLinked List After insertion at position: " + positionToDelete + "\n");
 		displayLinkedList();
-	}
 
-	public void deleteAtEnd() {
-		if (head == null) {
-			System.out.println("Empty Linked List..");
-		} else {
-			// taking a ptr to point at tail
-			Node ptr = tail;
-			// updating tail to its previous
-			tail = tail.prev;
-			// breaking link to next from updated tail
-			tail.next = null;
-			// breaking link from ptr
-			ptr.prev = null;
-		}
-		System.out.println("Linked list after deleting last element...");
-		displayLinkedList();
 	}
 
 	// Menu for all operations
@@ -188,7 +177,7 @@ public class DoublyLinkedListOperations {
 			ch = sc.nextInt();
 			switch (ch) {
 			case 0:
-				createDoublyLinkedList();
+				createDoublyCircularLinkedList();
 				break;
 			case 1:
 				System.out.print("Enter element to insert at begining: ");

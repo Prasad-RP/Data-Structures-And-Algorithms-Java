@@ -2,8 +2,6 @@ package linear_data_structures.linked_lists;
 
 import java.util.Scanner;
 
-import linear_data_structures.linked_lists.SinglyCircularLinkedList.Node;
-
 /**
  * This file contains methods to create, traverse , insertion and deletion in a
  * singly circular linked list.
