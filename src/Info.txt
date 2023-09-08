@@ -15,4 +15,127 @@ Types of data Structures :
 		Trees
 		Graphs 
 		
+
+Collection Framework -> 
+	The Java Collection Framework is a set of classes and interfaces that provide various data structures 
+	and algorithms for managing and manipulating groups of objects.
+	All these data structures can be done using collection frame work.
+	
+	Collection framework hierarchy :
+			
+			                Collection (Interface)
+		                    |
+		          +---------+---------+
+		          |                   |
+		      List (Interface)     Set (Interface)
+		          |                   |
+		   +------+------+      +-----+-----+
+		   |             |      |           |
+		ArrayList  LinkedList  HashSet     TreeSet
+		   |                                |
+		Vector                        NavigableSet (Interface)
+		   |                                |
+		 Stack                            TreeSet
+		   |
+		 Queue (Interface)
+		   |
+		 PriorityQueue
+	
+		
+	Collection (Interface): 
+		The root interface for all collections in the Java Collection Framework.
+		It defines basic operations like add, remove, size, etc.
+		
+		Collection (Interface) methods :
+		boolean add(E element)
+		boolean remove(Object object)
+		boolean contains(Object object)
+		int size()
+		boolean isEmpty()
+		void clear()
+	
+	List (Interface):
+		A subinterface of Collection, representing ordered collections where elements can be accessed by their index. 
+		Common implementations include ArrayList, LinkedList, and Vector.
+		
+		List (Interface) methods:
+		void add(int index, E element)
+		E get(int index)
+		E set(int index, E element)
+		int indexOf(Object object)
+		int lastIndexOf(Object object)
+		List<E> subList(int fromIndex, int toIndex)
+	
+	Set (Interface): 
+		A subinterface of Collection, representing collections that do not allow duplicate elements.
+		Common implementations include HashSet and TreeSet.
+		
+		Set (Interface) methods:
+		boolean add(E element)
+		boolean remove(Object object)
+		boolean contains(Object object)
+		int size()
+		boolean isEmpty()
+		void clear()
+
+	ArrayList: 
+		A dynamic array-based implementation of the List interface.
+		Inherits methods from List and Collection.
+		
+	LinkedList: 
+		A doubly-linked list-based implementation of the List interface.
+		Inherits methods from List and Collection.
+
+	HashSet: 
+		An implementation of the Set interface that uses a hash table for storage.
+		Inherits methods from Set and Collection.
+
+	TreeSet: 
+		An implementation of the Set interface that stores elements in a sorted order using a binary tree.
+		Inherits methods from NavigableSet, SortedSet, Set, and Collection.
+
+	Vector: 
+		A synchronized version of ArrayList, although it's less commonly used due to performance considerations.
+		Inherits methods from List and Collection.
+		
+	Stack: 
+		A subclass of Vector that implements a stack data structure.
+		methods :
+		void push(E item)
+		E pop()
+		E peek()
+		boolean empty()
+		int search(Object o)
+		
+	Queue (Interface): 
+		An interface representing a collection designed for holding elements before processing.
+		Common implementations include PriorityQueue.
+		
+		Queue (Interface) methods:
+		boolean add(E element)
+		E remove()
+		E peek()
+		boolean offer(E element)
+		boolean isEmpty()
+		int size()
+		
+	PriorityQueue: 
+		An implementation of the Queue interface that stores elements in a priority order.
+		Inherits methods from Queue.
+		
+	NavigableSet (Interface): 
+		A subinterface of SortedSet, which is itself a subinterface of Set.
+		It adds navigation methods to a sorted set. Common implementations include TreeSet.
+		
+		NavigableSet (Interface) methods:
+		E lower(E element)
+		E floor(E element)
+		E ceiling(E element)
+		E higher(E element)
+		E pollFirst()
+		E pollLast()
+		NavigableSet<E> subSet(E fromElement, boolean fromInclusive, E toElement, boolean toInclusive)
+		NavigableSet<E> headSet(E toElement, boolean inclusive)
+		NavigableSet<E> tailSet(E fromElement, boolean inclusive)	
+			
  

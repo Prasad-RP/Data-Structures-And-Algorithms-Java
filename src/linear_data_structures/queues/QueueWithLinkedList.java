@@ -9,7 +9,6 @@ import java.util.Scanner;
  *
  */
 public class QueueWithLinkedList {
-
 	class Queue {
 		int data;
 		Queue next;

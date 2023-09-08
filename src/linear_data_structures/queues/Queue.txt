@@ -4,3 +4,14 @@ Queue :
 	
 	It has 2 ends(front end and rear end) represented by two pointers front and rear.
 	Insertion is done from rear end and Deletion is done from front end.
+	
+Types of Queues :
+	Linear Queue 
+	Circular Queue -> To overcome the memory wastege issue of linear queue, circular queue is came in picture.
+	Priority Queue 	
+
+Applications of Queue : 
+	CPU scheduling
+	Breadth-first search
+	Printers
+	Web server	
