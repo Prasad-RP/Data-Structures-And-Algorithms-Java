@@ -1,0 +1,18 @@
+Tree :
+	This is an type of a non linear data structure.
+	a "tree" is a fundamental hierarchical data structure that 
+	resembles a tree in nature, with a root node and branches that
+	connect to other nodes.
+	
+	Basic Str. of tree : 
+			
+			    10 (Root)
+		       /  \
+		      /    \
+		     /      \
+		    /        \
+		   5 (Left)   20 (Right)
+		  /  \      /  \
+		 3    7   15   25
+		 (L)  (R)  (L)  (R)
+	

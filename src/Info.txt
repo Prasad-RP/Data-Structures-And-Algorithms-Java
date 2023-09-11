@@ -6,14 +6,25 @@ Space compexity : total amount of memory space used by an algorithm/program, inc
 Types of data Structures :
 
 	Linear ->
-		Arrays
-		Linked List 
-		Stack 
-		Queues
+	Linear Data Structures:
+		Linear data structures are those in which data elements are 
+		organized sequentially, one after the other.
+		Data elements in linear structures have a clear and specific order.
+		Ex.
+			Arrays
+			Linked List 
+			Stack 
+			Queues
 	
 	Non Linear ->
-		Trees
-		Graphs 
+	Non-Linear Data Structures:
+		Non-linear data structures are those in which data elements are 
+		not organized sequentially.
+		Data elements in non-linear structures do not have a strict order 
+		and may have complex relationships.
+		Ex.
+			Trees
+			Graphs 
 		
 
 Collection Framework -> 
