@@ -16,3 +16,52 @@ Tree :
 		 3    7   15   25
 		 (L)  (R)  (L)  (R)
 	
+	
+Trees offer a number of advantages over other data structures, including:
+	They are efficient for storing and retrieving data.
+	They are efficient for searching for data.
+	They are efficient for adding and removing data.	
+	
+Here are some examples of tree data structures:
+	Binary search trees
+	Binary heap
+	Tries
+	Quadtrees
+	KD trees
+	Spanning trees
+	Minimum spanning trees	
+
+Basic Terminologies In Tree Data Structure:
+
+	Parent Node: 
+		The node which is a predecessor of a node is called the parent node of that node. 
+	
+	Child Node: 
+		The node which is the immediate successor of a node is called the child node of that node. 
+		
+	Root Node: 
+		The topmost node of a tree or the node which does not have any parent node is called the root node. 
+		
+	Leaf Node or External Node: 
+		The nodes which do not have any child nodes are called leaf nodes.
+		
+	Ancestor of a Node: 
+		Any predecessor nodes on the path of the root to that node are called Ancestors of that node.
+		
+	Descendant: 
+		Any successor node on the path from the leaf node to that node.
+	
+	Sibling: 
+		Children of the same parent node are called siblings.
+	
+	Level of a node: 
+		The count of edges on the path from the root node to that node. The root node has level 0.
+	
+	Internal node: 
+		A node with at least one child is called Internal Node.
+	
+	Neighbour of a Node: 
+		Parent or child nodes of that node are called neighbors of that node.
+	
+	Subtree: 
+		Any node of the tree along with its descendant.
